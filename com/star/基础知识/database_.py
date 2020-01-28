@@ -1,3 +1,22 @@
+import pymysql
+import random
+
+conn = pymysql.connect(host='192.168.244.100',
+                       user='test',
+                       password='123456',
+                       db='star',
+                       cursorclass=pymysql.cursors.DictCursor)
+
+try:
+    with conn.cursor() as cursor:
+        sql = "INSERT INTO `user` (`id`, `name`) VALUES (%s, %s)"
+        cursor.execute(sql, (random.randint(10,100), '小麦快跑'))
+        conn.commit()
+except pymysql.err.DataError:
+    conn.rollback()
+finally:
+    conn.close()
+
 import sqlite3
 import random
 conn = sqlite3.connect('star.db')
@@ -20,3 +39,9 @@ cursor.execute(query_sql)
 print(cursor.fetchall())
 cursor.close()
 conn.close()
+
+import sqlite3
+conn = sqlite3.connect('star.db')
+cursor = conn.cursor()
+insert_sql =  'insert into user(id,name) values (%s,%s)'
+cursor.execute(insert_sql,(1,'小麦'))

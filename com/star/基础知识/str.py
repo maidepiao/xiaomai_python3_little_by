@@ -46,6 +46,3 @@ major = ' *信息管理与信息技术** '
 print('去掉左边空字符串:',major.lstrip())
 print('去掉两端空字符串,去掉两端指定字符:',major.strip().strip('*'))
 print('去掉右边空字符串:',major.rstrip())
-
-
-

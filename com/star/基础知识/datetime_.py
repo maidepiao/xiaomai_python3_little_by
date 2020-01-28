@@ -15,4 +15,3 @@ print(type(三天前),三天前)
 time.sleep(2)
 现在时间 = datetime.now()
 print('时间过了',type(现在时间-当前时间),(现在时间-当前时间).seconds)
-
