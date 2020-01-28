@@ -1,6 +1,6 @@
 import socket,pickle,json
 import threading
-from star.socket.msg import ChatMsg,BindMsg
+from star.网络编程.msg import ChatMsg,BindMsg
 
 class ChatServer:
     addr_dict = {}
