@@ -3,7 +3,7 @@ import requests
 url='http://bang.dangdang.com/books/bestsellers/' \
     '01.03.00.00.00.00-recent30-0-0-1-1'
 htmlStr=requests.get(url)
-#print(htmlStr.text)
+print(htmlStr.text)
 
 from bs4 import BeautifulSoup
 soup=BeautifulSoup(htmlStr.text,'lxml')
